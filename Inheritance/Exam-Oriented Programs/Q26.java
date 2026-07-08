@@ -1,0 +1,39 @@
+// 26.Write a Java program to demonstrate Single Inheritance.
+
+class Person {
+    String name;
+    int age;
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+        System.out.println("Person constructor executed...");
+    }
+
+    void showDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+}
+
+class Student extends Person {
+    String course;
+
+    public Student(String name, int age, String course) {
+        super(name, age);
+        this.course = course;
+        System.out.println("Student constructor executed...");
+    }
+
+    void showStudentDetails() {
+        showDetails();
+        System.out.println("Course: " + course);
+    }
+}
+
+public class Q26 {
+    public static void main(String[] args) {
+        Student s = new Student("Anish", 21, "Computer Science");
+        s.showStudentDetails();
+    }
+}
